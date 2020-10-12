@@ -1,0 +1,46 @@
+@import './newsjournal-styles/values.scss';
+
+#wrapper {
+  width: 100%;
+
+  text {
+    font-size: 15px;
+    color: nth($grays,5);
+  }
+
+  text.labels {
+    font-size: 12px;
+    color: #999999;
+    font-weight: bold;
+    pointer-events: none;
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  .axis,
+  .gridlines {
+    line,
+    path {
+      stroke: #ddd;
+    }
+  }
+
+  .x.axis {
+    * {
+      text-anchor: middle;
+      font-size: 12px;
+    }
+  }
+
+  .y {
+    .tick:first-of-type {
+      display: none;
+    }
+  }
+}
+
+.tippy-content {
+
+}

@@ -1,0 +1,81 @@
+<!--removeIf(pymframe)-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>sandbox</title>
+  <link rel="icon" type="image/png" href="https://www.gannett-cdn.com/sites/delawareonline/images/favicon.png">
+
+  <!--removeIf(tmp)-->
+<link rel="preload" href="https://www.gannett-cdn.com/uxstatic/usatoday/css/fonts.css" as="stylesheet" crossorigin="anonymous">
+  <script type="text/javascript" src="https://content-static.delawareonline.com/embeds/pym.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var pymChild = new pym.Child();
+
+      pymChild.onMessage('navigate', onNavigateMessage);
+
+      function onNavigateMessage(url) {
+          console.log(url)
+          window.location.href = url;
+      }
+
+
+      pym.Child({ polling: 100 });
+      pymChild.sendHeight();
+    //   var t = setTimeout(function() {
+    //     pymChild.sendHeight();
+    //     console.log("pym Started")
+    //   }, 2000);
+    }, false);
+  </script>
+  <!--endRemoveIf(tmp)-->
+</head>
+
+<body>
+  <!--endRemoveIf(pymframe)-->
+
+  {% include "partials/stylesheets.html" %}
+  <!--removeIf(tmp)-->
+
+  <style>
+    body,
+    html {
+      width: auto;
+      height: auto;
+      /*display: inline-block;*/
+    }
+  </style>
+  <!--endRemoveIf(tmp)-->
+
+
+  <!--build:css styles.min.css-->
+  <link rel="stylesheet" href="css/styles.css">
+  <!--endbuild-->
+
+  <!--removeIf(production)-->
+  <div class="graphicWrapper">
+
+
+  <!--endRemoveIf(production)-->
+
+  {% include "main-body.html" ignore missing %} {% include "partials/script-links.html" %}
+
+  <!--removeIf(production)-->
+
+
+  </div>
+
+  <!--endRemoveIf(production)-->
+
+  <!--build:js main.min.js -->
+  <script src="js/main.js"></script>
+  <!-- endbuild -->
+
+  <!--removeIf(pymframe)-->
+</body>
+
+</html>
+<!--endRemoveIf(pymframe)-->

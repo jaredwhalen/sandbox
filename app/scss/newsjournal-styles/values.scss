@@ -1,0 +1,225 @@
+$dnj-sans: 'Unify Sans Bold',sans-serif;
+
+
+$blues: (
+  #0A2149,
+  #0E2A73,
+  #0A32A0,
+  #1665CF,
+  #009BFF,
+  #7FBDFF,
+  #B9E1FF
+);
+$reds: (
+  #51010B,
+  #7C0E18,
+  #AA1E23,
+  #CD2D37,
+  #F03C4B,
+  #FB8987,
+  #FAC8C8
+);
+$purples: (
+  #38043A,
+  #500B4E,
+  #691464,
+  #8A32A3,
+  #AA50E6,
+  #CB90F1,
+  #E6CDFA
+);
+$greens: (
+  #012B1A,
+  #01402B,
+  #00553C,
+  #1F8A5C,
+  #3CC37D,
+  #8AD8AD,
+  #C8EBD7
+);
+$oranges: (
+  #932803,
+  #BB3C04,
+  #E65005,
+  #F1751D,
+  #FA9632,
+  #FFBB7C,
+  #FFE1C3
+);
+$teals: (
+  #013535,
+  #01494C,
+  #005F64,
+  #0A9299,
+  #19C8D2,
+  #91DCE3,
+  #BEF9F5
+);
+$yellows: (
+  #AF6402,
+  #D78401,
+  #FFA500,
+  #FFB215,
+  #FFBE23,
+  #FFD47B,
+  #FFEBC3
+);
+$grays: (
+  #141414,
+  #292929,
+  #404040,
+  #626262,
+  #878787,
+  #AFAFAF,
+  #D7D7D7
+);
+
+%noselect {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+@mixin desktop {
+  @media only screen and (max-width: 1000px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media only screen and (max-width: 720px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+@mixin BS-large {
+  @media only screen and (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin BS-medium {
+  @media only screen and (min-width: 992px) {
+    @content;
+  }
+}
+@mixin BS-small {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+@mixin box-shadow($args...) {
+  -webkit-box-shadow: $args;
+  -moz-box-shadow: $args;
+  box-shadow: $args;
+}
+@mixin display-flex {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+@mixin flex-wrap($flex...) {
+  -webkit-flex-wrap: $flex;
+  -ms-flex-wrap: $flex;
+  flex-wrap: $flex;
+}
+@mixin justify-content($flex...) {
+  -webkit-justify-content: $flex;
+  -ms-flex-pack: $flex;
+  justify-content: $flex;
+}
+@mixin align-content($flex...) {
+  -webkit-align-content: $flex;
+  -ms-flex-line-pack: $flex;
+  align-content: $flex;
+}
+@mixin order($flex...) {
+  -webkit-order: $flex;
+  -ms-flex-order: $flex;
+  order: $flex;
+}
+@mixin flex($flex...) {
+  -webkit-flex: $flex;
+  -ms-flex: $flex;
+  flex: $flex;
+}
+@mixin align-self($flex...) {
+  -webkit-align-self: $flex;
+  -ms-flex-item-align: $flex;
+  align-self: $flex;
+}
+@mixin animation($args...) {
+  -webkit-animation: $args;
+  -moz-animation: $args;
+  -o-animation: $args;
+  animation: $args;
+}
+@mixin transition($transition...) {
+  -moz-transition: $transition;
+  -o-transition: $transition;
+  -webkit-transition: $transition;
+  transition: $transition;
+}
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+@mixin keyframes($animationName) {
+  @-webkit-keyframes #{$animationName} {
+    @content;
+  }
+  @-moz-keyframes #{$animationName} {
+    @content;
+  }
+  @-o-keyframes #{$animationName} {
+    @content;
+  }
+  @keyframes #{$animationName} {
+    @content;
+  }
+}
+
+%clearfix {
+  &:after,
+  &:before {
+    content: " ";
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+%pagelink a {
+  cursor: pointer;
+  color: #0061A2;
+  box-shadow: inset -2px -5px 0 -2px #d5eeff;
+  @include transition(box-shadow 0.3s cubic-bezier(0.86, 0, 0.07, 1));
+}
+
+%pagelink a:hover {
+  box-shadow: inset -2px -20px 0 -3px #d5eeff;
+  text-decoration: none;
+}
